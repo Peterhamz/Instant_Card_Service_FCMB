@@ -1,0 +1,79 @@
+﻿<Window x:Class="fcmb.NumKeypad"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="NumKeypad" Height="440" Width="500" WindowStartupLocation="CenterScreen" WindowStyle="None" ShowInTaskbar="False" ResizeMode="NoResize" Topmost="True" MouseDown="Window_MouseDown">
+    <Viewbox>
+        <Grid Width="500" Height="440" x:Name="grid1" Background="#FF1A1A1A">
+
+            <TextBox x:Name="num" IsReadOnly="True" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="48" Margin="26,27,0,0" BorderThickness="0,0,0,2" TextWrapping="Wrap" Padding="0" VerticalAlignment="Top" Width="366" FontSize="30" Foreground="White" AcceptsReturn="True" AcceptsTab="True" Background="Transparent" BorderBrush="#FF787777"/>
+
+            <Button Style="{StaticResource MyButton}" x:Name="back" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="415,15,0,0" VerticalAlignment="Top" Cursor="Hand" FontSize="38" Background="Transparent" UseLayoutRounding="True" Foreground="White" BorderThickness="0" Width="65" BorderBrush="{x:Null}" Height="65" Click="back_Click">
+                <Border CornerRadius="25,25,25,25"  Width="50" Height="50" BorderThickness="0,0,0,0">
+                    <TextBlock Text="X" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" Padding="0" Foreground="White" Height="50" VerticalAlignment="Center" Margin="0,0,0,0" Width="50"/>
+                </Border>
+            </Button>
+
+            <Button Style="{StaticResource MyButton}" x:Name="one" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="57,109,0,0" VerticalAlignment="Top" Cursor="Hand" FontSize="38" Background="#FF333333" UseLayoutRounding="True" Foreground="White" BorderThickness="0" Width="65" BorderBrush="{x:Null}" Height="65" Click="one_Click">
+                <Border CornerRadius="25,25,25,25"  Width="50" Height="50" BorderThickness="0,0,0,0">
+                    <TextBlock Text="1" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" Padding="0" Foreground="White" Height="50" VerticalAlignment="Center" Margin="0,0,0,0" Width="50"/>
+                </Border>
+            </Button>
+            <Button Style="{StaticResource MyButton}" x:Name="two" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="147,109,0,0" VerticalAlignment="Top" Cursor="Hand" FontSize="38" Background="#FF333333" UseLayoutRounding="True" Foreground="White" BorderThickness="0" Width="65" BorderBrush="{x:Null}" Height="65" Click="two_Click">
+                <Border CornerRadius="25,25,25,25"  Width="50" Height="50" BorderThickness="0,0,0,0">
+                    <TextBlock Text="2" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" Padding="0" Foreground="White" Height="50" VerticalAlignment="Center" Margin="0,0,0,0" Width="50"/>
+                </Border>
+            </Button>
+            <Button Style="{StaticResource MyButton}" x:Name="three" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="237,109,0,0" VerticalAlignment="Top" Cursor="Hand" FontSize="38" Background="#FF333333" UseLayoutRounding="True" Foreground="White" BorderThickness="0" Width="65" BorderBrush="{x:Null}" Height="65" Click="three_Click">
+                <Border CornerRadius="25,25,25,25"  Width="50" Height="50" BorderThickness="0,0,0,0">
+                    <TextBlock Text="3" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" Padding="0" Foreground="White" Height="50" VerticalAlignment="Center" Margin="0,0,0,0" Width="50"/>
+                </Border>
+            </Button>
+            <Button Style="{StaticResource MyButton}" x:Name="four" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="57,190,0,0" VerticalAlignment="Top" Cursor="Hand" FontSize="38" Background="#FF333333" UseLayoutRounding="True" Foreground="White" BorderThickness="0" Width="65" BorderBrush="{x:Null}" Height="65" Click="four_Click">
+                <Border CornerRadius="25,25,25,25"  Width="50" Height="50" BorderThickness="0,0,0,0">
+                    <TextBlock Text="4" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" Padding="0" Foreground="White" Height="50" VerticalAlignment="Center" Margin="0,0,0,0" Width="50"/>
+                </Border>
+            </Button>
+            <Button Style="{StaticResource MyButton}" x:Name="five" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="147,190,0,0" VerticalAlignment="Top" Cursor="Hand" FontSize="38" Background="#FF333333" UseLayoutRounding="True" Foreground="White" BorderThickness="0" Width="65" BorderBrush="{x:Null}" Height="65" Click="five_Click">
+                <Border CornerRadius="25,25,25,25"  Width="50" Height="50" BorderThickness="0,0,0,0">
+                    <TextBlock Text="5" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" Padding="0" Foreground="White" Height="50" VerticalAlignment="Center" Margin="0,0,0,0" Width="50"/>
+                </Border>
+            </Button>
+            <Button Style="{StaticResource MyButton}" x:Name="six" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="237,190,0,0" VerticalAlignment="Top" Cursor="Hand" FontSize="38" Background="#FF333333" UseLayoutRounding="True" Foreground="White" BorderThickness="0" Width="65" BorderBrush="{x:Null}" Height="65" Click="six_Click">
+                <Border CornerRadius="25,25,25,25"  Width="50" Height="50" BorderThickness="0,0,0,0">
+                    <TextBlock Text="6" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" Padding="0" Foreground="White" Height="50" VerticalAlignment="Center" Margin="0,0,0,0" Width="50"/>
+                </Border>
+            </Button>
+            <Button Style="{StaticResource MyButton}" x:Name="seven" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="57,273,0,0" VerticalAlignment="Top" Cursor="Hand" FontSize="38" Background="#FF333333" UseLayoutRounding="True" Foreground="White" BorderThickness="0" Width="65" BorderBrush="{x:Null}" Height="65" Click="seven_Click">
+                <Border CornerRadius="25,25,25,25"  Width="50" Height="50" BorderThickness="0,0,0,0">
+                    <TextBlock Text="7" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" Padding="0" Foreground="White" Height="50" VerticalAlignment="Center" Margin="0,0,0,0" Width="50"/>
+                </Border>
+            </Button>
+            <Button Style="{StaticResource MyButton}" x:Name="eight" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="147,273,0,0" VerticalAlignment="Top" Cursor="Hand" FontSize="38" Background="#FF333333" UseLayoutRounding="True" Foreground="White" BorderThickness="0" Width="65" BorderBrush="{x:Null}" Height="65" Click="eight_Click">
+                <Border CornerRadius="25,25,25,25"  Width="50" Height="50" BorderThickness="0,0,0,0">
+                    <TextBlock Text="8" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" Padding="0" Foreground="White" Height="50" VerticalAlignment="Center" Margin="0,0,0,0" Width="50"/>
+                </Border>
+            </Button>
+            <Button Style="{StaticResource MyButton}" x:Name="nine" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="237,273,0,0" VerticalAlignment="Top" Cursor="Hand" FontSize="38" Background="#FF333333" UseLayoutRounding="True" Foreground="White" BorderThickness="0" Width="65" BorderBrush="{x:Null}" Height="65" Click="nine_Click">
+                <Border CornerRadius="25,25,25,25"  Width="50" Height="50" BorderThickness="0,0,0,0">
+                    <TextBlock Text="9" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" Padding="0" Foreground="White" Height="50" VerticalAlignment="Center" Margin="0,0,0,0" Width="50"/>
+                </Border>
+            </Button>
+            <Button Style="{StaticResource MyButton}" x:Name="zero" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="57,358,0,0" VerticalAlignment="Top" Cursor="Hand" FontSize="38" Background="#FF333333" UseLayoutRounding="True" Foreground="White" BorderThickness="0" Width="155" BorderBrush="{x:Null}" Height="65" Click="zero_Click">
+                <Border CornerRadius="25,25,25,25"  Width="50" Height="50" BorderThickness="0,0,0,0">
+                    <TextBlock Text="0" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" Padding="0" Foreground="White" Height="50" VerticalAlignment="Center" Margin="0,0,0,0" Width="50"/>
+                </Border>
+            </Button>
+            <Button Style="{StaticResource MyButton}" x:Name="bks" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="237,358,0,0" VerticalAlignment="Top" Cursor="Hand" FontSize="20" Background="#FF333333" UseLayoutRounding="True" Foreground="White" BorderThickness="0" Width="65" BorderBrush="{x:Null}" Height="65" Click="bks_Click">
+                <Border CornerRadius="25,25,25,25"  Width="50" Height="50" BorderThickness="0,0,0,0">
+                    <TextBlock Text="BKS" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" Padding="0,10,0,0" Foreground="White" Height="50" VerticalAlignment="Center" Margin="0,0,0,0" Width="50"/>
+                </Border>
+            </Button>
+            <Button Style="{StaticResource MyButton}" x:Name="enter" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="366,190,0,0" VerticalAlignment="Top" Cursor="Hand" FontSize="20" Background="#FF333333" UseLayoutRounding="True" Foreground="White" BorderThickness="0" Width="114" BorderBrush="{x:Null}" Height="233" Click="enter_Click">
+                <Border CornerRadius="25,25,25,25"  Width="50" Height="50" BorderThickness="0,0,0,0">
+                    <TextBlock Text="Enter" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" Padding="0,10,0,0" Foreground="White" Height="50" VerticalAlignment="Center" Margin="0,0,0,0" Width="50"/>
+                </Border>
+            </Button>
+        </Grid>
+    </Viewbox>
+
+</Window>

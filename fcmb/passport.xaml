@@ -1,0 +1,49 @@
+﻿<Window x:Class="fcmb.passport"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
+        Title="Passport" Height="550" Width="550" WindowStartupLocation="CenterScreen" WindowStyle="None" ShowInTaskbar="False" ResizeMode="NoResize" Topmost="True" MouseDown="Window_MouseDown">
+    <Window.Background><!--AllowsTransparency="True"--> 
+        <SolidColorBrush Color="White" Opacity="0.1"/>
+    </Window.Background>
+    <Viewbox>
+        <Grid Width="550" Height="550" x:Name="grid1">
+            <Border CornerRadius="0,0,0,0" Margin="0,1,0,472">
+
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#5c2684" Offset="0"/>
+                        <GradientStop Color="#FFAD2585" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Label Foreground="White" Content="Take Passport" FontFamily="Cambria" FontWeight="Bold" FontStyle="Italic" FontSize="30" Margin="166,18,138,2" />
+            </Border>
+
+            <Border CornerRadius="0,0,0,0" Margin="0,78,0,0">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFAD2585" Offset="0"/>
+                        <GradientStop Color="#ffb717" Offset="1"/>
+                    </LinearGradientBrush>
+                   <!-- <SolidColorBrush Color="#ffb717"/>-->
+                </Border.Background>
+            </Border>
+            
+            <WindowsFormsHost Name="ima" HorizontalAlignment="Left" Height="300" Margin="98,105,0,0" VerticalAlignment="Top" Width="350" Background="Black" >
+                
+            </WindowsFormsHost>
+
+            <Button Style="{StaticResource MyButton}" x:Name="button" HorizontalAlignment="Left" Margin="25,475,0,0" VerticalAlignment="Top" Cursor="Hand" FontSize="20" Background="Transparent" UseLayoutRounding="True" Foreground="White" BorderThickness="0" Width="215" BorderBrush="{x:Null}" Height="65" Click="button_Click">
+                <Border CornerRadius="10,10,10,10"  Width="200" Height="55" BorderThickness="0,0,0,0" Background="#5c2684">
+                    <TextBlock Text="Take Photo" FontSize="25" TextWrapping="Wrap" TextAlignment="Center" Padding="13" FontWeight="Bold" Foreground="White" FontFamily="Cambria" Height="55" VerticalAlignment="Top" HorizontalAlignment="Left" Width="200"/>
+                </Border>
+            </Button>
+
+            <Button Style="{StaticResource MyButton}" x:Name="dismiss" HorizontalAlignment="Left" Margin="306,475,0,0" VerticalAlignment="Top" Cursor="Hand" FontSize="20" Background="Transparent" UseLayoutRounding="True" Foreground="White" BorderThickness="0" Width="215" BorderBrush="{x:Null}" Height="65" Click="dismiss_Click">
+                <Border CornerRadius="10,10,10,10"  Width="200" Height="55" BorderThickness="0,0,0,0" Background="#5c2684">
+                    <TextBlock Text="Closed" FontSize="25" TextWrapping="Wrap" TextAlignment="Center" Padding="15" FontWeight="Bold" FontFamily="Cambria" Foreground="White" Height="55" VerticalAlignment="Top" Margin="0,-3,0,0" HorizontalAlignment="Left" Width="200"/>
+                </Border>
+            </Button>
+        </Grid>
+    </Viewbox>
+</Window>

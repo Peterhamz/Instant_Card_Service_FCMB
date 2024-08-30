@@ -1,0 +1,61 @@
+﻿<Window x:Class="fcmb.BVNDet"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="BVN Details" Height="350" Width="650" AllowsTransparency="True" WindowStartupLocation="CenterScreen" WindowStyle="None" ShowInTaskbar="False" ResizeMode="NoResize" Topmost="True" Loaded="Window_Loaded" MouseDown="Window_MouseDown">
+    <Window.Background>
+        <SolidColorBrush Color="Transparent"/>
+    </Window.Background>
+    <Viewbox>
+        <Grid Width="650" Height="350" Background="Transparent">
+            <Border CornerRadius="25,25,0,0"  Height="110" Margin="0,2,0,238" HorizontalAlignment="Right" Width="650">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0.4">
+                        <GradientStop Color="#5c2684" Offset="0"/>
+                        <GradientStop Color="#FFAD2585" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+                <Label x:Name="bvnField" Foreground="White" Content="" FontFamily="Cambria" FontWeight="Bold" FontStyle="Italic" FontSize="50" Margin="129,20,98,0" />
+            </Border>
+
+            <Image Source="Contents/logo.png" OpacityMask="Gray" Margin="0,3,521,247"  RenderTransformOrigin="-6.3,0.432"/>
+
+            <Border CornerRadius="0,0,25,25" Margin="0,112,0,0">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFAD2585" Offset="0"/>
+                        <GradientStop Color="#ffb717" Offset="1"/>
+                    </LinearGradientBrush>
+                    <!--<SolidColorBrush Color="#ffb717" />-->
+                </Border.Background>
+            </Border>
+            <TextBox x:Name="val" HorizontalAlignment="Left" HorizontalContentAlignment="Center" Height="48" Margin="71,175,0,0" BorderThickness="0,0,0,2" TextWrapping="Wrap" Padding="0" VerticalAlignment="Top" Width="518" FontSize="30" Foreground="Black" AcceptsReturn="True" AcceptsTab="True" Background="Transparent" BorderBrush="#FF787777" GotFocus="bvn_GotFocus"  PreviewMouseDown="Val_PreviewMouseDown"/>
+            <TextBlock IsHitTestVisible="False" Text="Enter required Information" VerticalAlignment="Center" FontFamily="Cambria" HorizontalAlignment="Left" Margin="190,184,0,136" Foreground="White" FontSize="25">
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=val}" Value="">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+
+            <Button Style="{StaticResource MyButton}" x:Name="dismiss" HorizontalAlignment="Left" Margin="408,272,0,0" VerticalAlignment="Top" Cursor="Hand" FontSize="18" Background="Transparent" UseLayoutRounding="True" Foreground="White" BorderThickness="0" Width="165" BorderBrush="{x:Null}" Height="56" Click="dismiss_Click">
+                <Border CornerRadius="10,10,10,10"  Width="150" Height="45" BorderThickness="0,0,0,0" Background="#FF5C3191">
+                    <TextBlock Text="Dismiss" TextWrapping="Wrap" FontFamily="Cambria" TextAlignment="Center" Padding="10" FontWeight="Bold" Foreground="White" Height="45" VerticalAlignment="Top" Margin="0,0,-42,0" HorizontalAlignment="Left" Width="150"/>
+                </Border>
+            </Button>
+            <Button Style="{StaticResource MyButton}" x:Name="submit" HorizontalAlignment="Left" Margin="108,272,0,0" VerticalAlignment="Top" Cursor="Hand" FontSize="18" Background="Transparent" UseLayoutRounding="True" Foreground="White" BorderThickness="0" Width="165" BorderBrush="{x:Null}" Height="56" Click="submit_Click">
+                <Border CornerRadius="10,10,10,10"  Width="150" Height="45" BorderThickness="0,0,0,0" Background="#FF5C3191">
+                    <TextBlock Text="Submit" TextWrapping="Wrap" FontFamily="Cambria" TextAlignment="Center" Padding="10" FontWeight="Bold" Foreground="White" Height="45" VerticalAlignment="Top" Margin="0,0,-42,0" HorizontalAlignment="Left" Width="150"/>
+                </Border>
+            </Button>
+
+            <Label x:Name="valerr" Content="" Margin="204,239,0,0" FontFamily="Cambria" HorizontalContentAlignment="Left" HorizontalAlignment="Left" VerticalAlignment="Top" Height="33" Width="267" FontSize="16" Foreground="Red"/>
+
+        </Grid>
+    </Viewbox>
+
+</Window>

@@ -1,0 +1,111 @@
+﻿<Window x:Class="fcmb.accountDetail"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:fcmb"
+          xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+        Title="accountDetail" Height="450" Width="500"
+        WindowStyle="None" ResizeMode="NoResize"
+        ShowInTaskbar="False" AllowsTransparency="True"
+        Background="Transparent"
+        MouseDown="Window_MouseDown"
+        WindowStartupLocation="Manual" VerticalAlignment="Center" Top="160" Left="12cm" Topmost="True" >
+
+    <Border Padding="5"  BorderBrush="#ffb717" BorderThickness="5" CornerRadius="30" >
+
+        <Border.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <GradientStop Color="#5c2684" Offset="0"/>
+                <GradientStop Color="#FFAD2585" Offset="1"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2*"></RowDefinition>
+                <RowDefinition Height="2.5*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <!-- First Row definitition-->
+            <Grid Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Image  />
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"></RowDefinition>
+                        <RowDefinition Height="2*"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Label Content="Welcome !" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="white" FontSize="20" FontStyle="Italic"></Label>
+                    <TextBlock Grid.Row="1" Foreground="White" Text="" VerticalAlignment="Top" FontSize="20" />
+                    <Label Grid.Row="2" Content="Account Balance :" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="white" FontSize="15" FontStyle="Italic"></Label>
+                    <TextBlock Grid.Row="2"  HorizontalAlignment="Right" FontSize="15" Width="120"
+                           Text="" FontStyle="Oblique"/>
+                </Grid>
+            </Grid>
+
+            <!-- Second Row Definition -->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Row="0" Grid.Column="0">
+                    <Label  VerticalAlignment="Top" FontSize="13" FontStyle="Oblique" 
+                           Content="Select your preferred Account Number&#xD;&#xA; and preferred Card Brand"  Foreground="white" Height="54"/>
+
+                    <StackPanel  VerticalAlignment="Center">
+                        <Label FontWeight="Bold" FontFamily="Roboto" Foreground="white">Account Number</Label>
+                        <RadioButton GroupName="account" Foreground="white" Background="#ffb717">10908956748</RadioButton>
+                        <RadioButton GroupName="account" Foreground="white" Background="#ffb717">2345678901</RadioButton>
+                        <RadioButton GroupName="account" IsChecked="True" Background="#ffb717" Foreground="white">1234567890</RadioButton>
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Column="1">
+
+                    <StackPanel  VerticalAlignment="Center">
+                        <Label FontWeight="Bold" Foreground="white">Card Brand</Label>
+                        <RadioButton GroupName="card" Background="#ffb717" Foreground="white">Master card</RadioButton>
+                        <RadioButton GroupName="card" Background="#ffb717" Foreground="white">Visa</RadioButton>
+                        <RadioButton GroupName="card" Background="#ffb717" Foreground="white" IsChecked="True">Verve</RadioButton>
+                    </StackPanel>
+                </Grid>
+
+
+            </Grid>
+
+            <!-- Third definition -->
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0">
+                    <Button x:Name="cancel" Style="{DynamicResource MaterialDesignRaisedAccentButton}" MinHeight="60" Width="190"  Background="#ffb717" 
+                    BorderBrush="#ffb717" Content="Cancel" Foreground="White" FontFamily="Georgia" FontSize="20" BorderThickness="2.5"
+                                materialDesign:ButtonAssist.CornerRadius="35" Click="Cancel_Click">
+                    </Button>
+
+                </Grid>
+                <Grid Grid.Column="1">
+                    <Button x:Name="print" Style="{DynamicResource MaterialDesignRaisedAccentButton}" MinHeight="60" Width="190"  Background="#ffb717" 
+                    BorderBrush="#ffb717" Content="Print Card" Foreground="White" FontFamily="Georgia" FontSize="20" BorderThickness="2.5"
+                                materialDesign:ButtonAssist.CornerRadius="35" Click="Print_Click">
+                    </Button>
+
+                </Grid>
+            </Grid>
+        </Grid>
+    </Border>
+
+</Window>

@@ -1,0 +1,63 @@
+﻿<Page x:Class="fcmb.start"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"  
+      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="Start" Width="53.34cm" Height="2086">
+
+    <Viewbox StretchDirection="Both" Stretch="UniformToFill">
+        <Grid Width="53.34cm">
+            <Border x:Name="backborder" Grid.RowSpan="1" Visibility="Hidden"
+                    Panel.ZIndex="1"
+                    Opacity="0.6">
+                <Border Background="{StaticResource ForegroundVeryDarkBrush}">
+                    <Controls:ProgressRing x:Name="progress" Visibility="Visible" Foreground="{StaticResource HeaderBrush}" Panel.ZIndex="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="250" Height="350"  IsActive="True" Margin="868,900,898,936" />
+                </Border>
+            </Border>
+
+            <Border x:Name="plainborder" Grid.RowSpan="1" Visibility="Hidden"
+                    Panel.ZIndex="1"
+                    Opacity="0.6">
+                <Border Background="{StaticResource ForegroundVeryDarkBrush}"></Border>
+
+            </Border>
+
+            <WrapPanel Height="2086" Margin="10,10,-10,240">
+                <WrapPanel.Background>
+                    <ImageBrush ImageSource="Contents/startImg1.png" Stretch="UniformToFill"/>
+                </WrapPanel.Background>
+            </WrapPanel>
+
+            <Rectangle Width="1000" Height="1000" Fill="#FF5A2D82" RadiusX="70" RadiusY="70" Margin="456,564,560,772" />
+            <Label x:Name="label" Content="FCMB" HorizontalAlignment="Left" Width="auto" Margin="730,696,0,0" VerticalAlignment="Top" Foreground="White" FontSize="172" FontFamily="Open Sans Extrabold"/>
+            <Label x:Name="contV" Content="" HorizontalAlignment="Left" Width="760" Margin="570,1361,0,0" VerticalAlignment="Top" Foreground="#ffb717" FontSize="50" FontFamily="acumin-pro,sans-serif" Height="214"/>
+            <Rectangle Fill="#FFFBB506" HorizontalAlignment="Left" Height="411" Margin="574,945,0,0" RadiusY="50" RadiusX="50" VerticalAlignment="Top" Width="758"/>
+            <Button Style="{StaticResource MyButton}" x:Name="instantCard" HorizontalAlignment="Left" Margin="615,980,0,0" VerticalAlignment="Top" Cursor="Hand" FontSize="36" IsCancel="True" Background="Transparent" UseLayoutRounding="True" Foreground="White" BorderThickness="0" BorderBrush="{x:Null}" Click="instantCard_Click">
+                <Button.Content>
+                    <Border CornerRadius="35,0,0,0"  Width="304" Height="125" BorderThickness="0,0,0,0" Background="#FF5A2D82" Padding="20" >
+                        <TextBlock Text="REQUEST INSTANT CARD" TextWrapping="Wrap" TextAlignment="Center" Foreground="white" FontWeight="Bold" FontFamily="Cambria"/>
+                    </Border>
+                </Button.Content>
+            </Button>
+
+            <Button Style="{StaticResource MyButton}" x:Name="depositCheque" HorizontalAlignment="Left" Margin="977,980,0,0" VerticalAlignment="Top" Cursor="Hand" FontSize="36" IsCancel="True" Background="Transparent" UseLayoutRounding="True" Foreground="White" BorderThickness="0" BorderBrush="{x:Null}" Click="depositCheque_Click">
+                <Button.Content>
+                    <Border CornerRadius="0,35,0,0"  Width="304" Height="125" BorderThickness="0,0,0,0" Background="#FF5A2D82" Padding="20">
+                        <TextBlock Text="DEPOSIT A CHEQUE" TextWrapping="Wrap" TextAlignment="Center" Foreground="white" FontWeight="Bold" FontFamily="Cambria"/>
+                    </Border>
+                </Button.Content>
+            </Button>
+            <Button Style="{StaticResource MyButton}" x:Name="openAccount" HorizontalAlignment="Left" Margin="615,1199,0,0" VerticalAlignment="Top" Cursor="Hand" FontSize="36" IsCancel="True" Background="Transparent" UseLayoutRounding="True" Foreground="White" BorderThickness="0" Width="678" BorderBrush="{x:Null}" Click="openAccount_Click">
+                <Button.Content>
+                    <Border CornerRadius="0,0,35,35"  Width="665" Height="125" BorderThickness="0,0,0,0" Background="#FFD10056" Padding="12" >
+                        <TextBlock Text="OPEN AN ACCOUNT" TextWrapping="Wrap" TextAlignment="Center" Padding="25" FontWeight="Bold" FontFamily="Cambria" Foreground="white"/>
+                    </Border>
+                </Button.Content>
+            </Button>
+            <Rectangle Fill="#FF5A2D82" HorizontalAlignment="Left" Height="38" Margin="537,1137,0,0" VerticalAlignment="Top" Width="838"/>
+        </Grid>
+    </Viewbox>
+</Page>

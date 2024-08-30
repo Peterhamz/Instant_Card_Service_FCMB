@@ -1,0 +1,56 @@
+﻿<Window x:Class="fcmb.cardPrint"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:fcmb"
+        xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+        Title="cardPrint" Style="{StaticResource miniRecWindowSizeStyle}" AllowsTransparency="True" WindowStartupLocation="CenterScreen" WindowStyle="None" ShowInTaskbar="False" ResizeMode="NoResize" Topmost="True" MouseDown="Window_MouseDown" Loaded="Window_Loaded">
+    <Window.Background>
+        <SolidColorBrush Color="Transparent"/>
+    </Window.Background>
+    <Viewbox>
+        <Grid Style="{StaticResource miniRecGridSizeStyle}" Background="Transparent">
+            <Border CornerRadius="25,25,25,25" Margin="0,10,0,0" BorderThickness="2" BorderBrush="#FF5C3191">
+                <Border.Background>
+
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#ffb717" Offset="0"/>
+                        <GradientStop Color="#FFAD2585" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+
+
+            <RadioButton x:Name="acc1" Background="#FF5A2D82" Foreground="White" Style="{StaticResource RadioButtonStyle}" GroupName="AccountNumber" Margin="36,314,349.606,313.197" Content="" FontSize="25" RenderTransformOrigin="0.5,0.5"/>
+            <RadioButton x:Name="acc2" Background="#FF5A2D82" Foreground="White" Style="{StaticResource RadioButtonStyle}" GroupName="AccountNumber" Margin="36,358,349.606,268.197" Content="" FontSize="25" RenderTransformOrigin="0.5,0.5"/>
+            <RadioButton x:Name="acc3" Background="#FF5A2D82"  Foreground="White" Style="{StaticResource RadioButtonStyle}" GroupName="AccountNumber" Margin="36,402,349.606,231.197" Content="" FontSize="25" RenderTransformOrigin="0.5,0.5"/>
+
+            <RadioButton Name="master"  Background="#FF5A2D82" Style="{StaticResource RadioButtonStyle}" Foreground="white" GroupName="Card Type" Margin="304,314,37.606,313.197" Content="Master Card" FontSize="25" RenderTransformOrigin="0.5,0.5"/>
+            <RadioButton Style="{StaticResource RadioButtonStyle}" Visibility="Hidden" GroupName="Card Type" Margin="304,358,37.606,268.197" Content="Visa Card" FontSize="25" RenderTransformOrigin="0.5,0.5"/>
+            <RadioButton Style="{StaticResource RadioButtonStyle}" Visibility="Hidden" GroupName="Card Type" Margin="304,397,37.606,231.197" Content="Verve Card" FontSize="25" RenderTransformOrigin="0.5,0.5"/>
+
+            <TextBox Foreground="White" Text="Kindly select an account and card type for card printing." BorderThickness="0" Height="auto" TextWrapping="Wrap" Background="Transparent" HorizontalContentAlignment="Left" FontFamily="Cambria" FontStyle="Italic" FontSize="25" Margin="322,145,23.606,396.197" TextChanged="TextBox_TextChanged" />
+
+            <Button Style="{StaticResource MyButton}" x:Name="customize" HorizontalAlignment="Left" Margin="36,542,0,0" VerticalAlignment="Top" Cursor="Hand" FontSize="25" Background="Transparent" UseLayoutRounding="True" Foreground="White" BorderThickness="0" Width="180" BorderBrush="{x:Null}" Height="55" Click="Customize_Click">
+                <Border CornerRadius="10,10,10,10"  Width="170" Height="50" BorderThickness="0,0,0,0" Background="White">
+                    <TextBlock Text="Closed" TextWrapping="Wrap" TextAlignment="Center" Padding="10" FontWeight="Bold" FontFamily="Cambria" Foreground="#FF8000" Height="50" VerticalAlignment="Top" Margin="0,0,-42,0" HorizontalAlignment="Left" Width="170"/>
+                </Border>
+            </Button>
+
+            <Image x:Name="cd" HorizontalAlignment="Left" Height="137" Margin="34,89,0,0" VerticalAlignment="Top" Width="206" Source="Contents/logo.png"/>
+            <TextBox x:Name="username" Foreground="#FF5A2D82" Text="" BorderThickness="0" Height="auto" TextWrapping="Wrap" Background="Transparent" HorizontalContentAlignment="Left" FontFamily="Cambria" FontStyle="Italic" FontSize="25" Margin="322,89,23.606,525.197" x:FieldModifier="public" />
+
+            <Button Style="{StaticResource MyButton}" x:Name="printCard" HorizontalAlignment="Left" Margin="351,542,0,0" VerticalAlignment="Top" Cursor="Hand" FontSize="25" Background="Transparent" UseLayoutRounding="True" Foreground="White" BorderThickness="0" Width="180" BorderBrush="{x:Null}" Height="55" Click="printCard_Click">
+                <Border CornerRadius="10,10,10,10"  Width="170" Height="50" BorderThickness="0,0,0,0" Background="White">
+                    <TextBlock Text="Print Card" TextWrapping="Wrap" TextAlignment="Center" Padding="10" FontWeight="Bold" FontFamily="Cambria" Foreground="#FF8000" Height="50" VerticalAlignment="Top" Margin="0,0,-42,0" HorizontalAlignment="Left" Width="170"/>
+                </Border>
+            </Button>
+
+            <Controls:ProgressRing x:Name="prog" Foreground="White" Margin="264,554,0,76.197" HorizontalAlignment="Left" VerticalAlignment="Center" Width="35" Height="35" IsActive="False" />
+            <Label x:Name="cont" Content="" Foreground="White" Padding="0" Margin="36,607,29.606,18.197" HorizontalAlignment="Center" VerticalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="524" Height="40" FontSize="25"/>
+
+
+        </Grid>
+    </Viewbox>
+</Window>

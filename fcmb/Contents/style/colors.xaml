@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:fcmb.Contents.style">
+
+    <Color x:Key="ForegroundVeryDark">#000000</Color>
+    <Color x:Key="ForegroundVeryPurple">#5c2684</Color>
+
+    <SolidColorBrush x:Key="ForegroundVeryDarkBrush" Color="{StaticResource ForegroundVeryDark}"/>
+    <SolidColorBrush x:Key="ForegroundVeryPurpleBrush" Color="{StaticResource ForegroundVeryPurple}"/>
+
+    <Color x:Key="Header">#FFFBB506</Color>
+    <SolidColorBrush x:Key="HeaderBrush" Color="{StaticResource Header}"/>
+
+</ResourceDictionary>

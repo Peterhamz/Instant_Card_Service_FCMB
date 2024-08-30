@@ -1,0 +1,351 @@
+﻿<Page x:Class="fcmb.withoutBVN"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:Controls="clr-namespace:MahApps.Metro.Controls;assembly=MahApps.Metro"
+      mc:Ignorable="d" 
+      d:DesignHeight="300" d:DesignWidth="300"
+	Title="Without BVN"  Width="53.34cm" Height="2086" ShowsNavigationUI="False" Loaded="Page_Loaded">
+
+    <Viewbox StretchDirection="Both" Stretch="UniformToFill">
+        <Grid Width="53.34cm" Height="2086" Background="Transparent">
+            <WrapPanel Width="53.34cm" Height="2086">
+                <WrapPanel.Background>
+                    <ImageBrush ImageSource="Contents/background.png" Stretch="UniformToFill"/>
+                </WrapPanel.Background>
+            </WrapPanel>
+
+
+            <Rectangle x:Name="rect" HorizontalAlignment="Left" Height="2086" VerticalAlignment="Top" Width="2016" MouseDown="rect_MouseDown"/>
+
+            <Image Height="176" VerticalAlignment="Top" Source="Contents/logo.png" Margin="1784,27,57,0"/>
+            <Border CornerRadius="0,25,0,0" Background="#FF5C2782" RenderTransformOrigin="10.0, 10.0" Height="123" Margin="0,27,0,0"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="1414">
+                <Border.RenderTransform>
+                    <!-- giving the transform a name tells the framework not to freeze it -->
+                    <TranslateTransform x:Name="noFreeze" />
+                </Border.RenderTransform>
+                <Border.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="(Border.RenderTransform).(TranslateTransform.X)" From="-1414.0"  To="0" Duration="0:0:1" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Border.Triggers>
+                <Label x:Name="label" Content="Open An Account" HorizontalContentAlignment="Right" HorizontalAlignment="Left" Margin="119,11,0,0" VerticalAlignment="Top" Foreground="#FFF2F1F3" FontSize="60" Width="1213" FontFamily="Cambria" FontWeight="Bold" FontStyle="Italic">
+                </Label>
+            </Border>
+            <Border CornerRadius="0,0,25,0" Background="#FFFBB734" Height="53" Margin="0,150,0,0"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="1414">
+                <Border.RenderTransform>
+                    <!-- giving the transform a name tells the framework not to freeze it -->
+                    <TranslateTransform x:Name="bod" />
+                </Border.RenderTransform>
+                <Border.Triggers>
+                    <EventTrigger RoutedEvent="Loaded">
+                        <BeginStoryboard>
+                            <Storyboard>
+                                <DoubleAnimation Storyboard.TargetProperty="(Border.RenderTransform).(TranslateTransform.X)" From="-1414.0"  To="0" Duration="0:0:1.25" />
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Border.Triggers>
+                <Label x:Name="dtt" Content="" HorizontalContentAlignment="Left" HorizontalAlignment="Left" Margin="15,5,0,0" VerticalAlignment="Top" Foreground="Black" FontSize="25" Width="1213" FontFamily="Cambria" FontStyle="Italic">
+
+                </Label>
+            </Border>
+
+            <ComboBox Style="{StaticResource titlecombo}" x:Name="title" KeyboardNavigation.TabIndex="0" BorderThickness="0,0,0,2" MaxDropDownHeight="1500" HorizontalAlignment="Left" Margin="648,424,0,0" VerticalAlignment="Top" Width="218" Height="90" Padding="10" DropDownClosed="title_DropDownClosed">
+                <ComboBoxItem Content="Mr"/>
+                <ComboBoxItem Content="Mrs"/>
+                <ComboBoxItem Content="Miss"/>
+            </ComboBox>
+            <TextBlock Margin="696,446,0,1598" IsHitTestVisible="False" Text="-- Title --" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Black" FontSize="35" FontFamily="Cambria" FontStyle="Italic" >
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=title}" Value="">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+
+            <TextBox x:Name="fn" Margin="1094,428,0,0" MaxLines="4" IsEnabled="False" KeyboardNavigation.TabIndex="1" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="86" FontFamily="Cambria" FontStyle="Italic" Padding="10" ToolTip="Enter Your First Name" VerticalAlignment="Top" Width="345" FontSize="35" Foreground="Black" BorderThickness="0,0,0,2" AcceptsReturn="False" AcceptsTab="False" AllowDrop="False" TextWrapping="NoWrap"  Background="{x:Null}" BorderBrush="Black" LostFocus="fn_LostFocus" GotFocus="fn_GotFocus"/>
+            <TextBlock Margin="1197,448,0,1596" IsHitTestVisible="False" Text="First Name" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Black" FontSize="35" FontFamily="Cambria" FontStyle="Italic" >
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=fn}" Value="">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+
+            <TextBox x:Name="mn" Margin="1595,424,0,0" KeyboardNavigation.TabIndex="2" IsEnabled="False" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="90" FontFamily="Cambria" FontStyle="Italic" Padding="10" ToolTip="Enter Your Middle Name" VerticalAlignment="Top" Width="375" FontSize="35" Foreground="Black" BorderThickness="0,0,0,2" AcceptsReturn="False" AcceptsTab="False" AllowDrop="False" TextWrapping="NoWrap"  Background="{x:Null}" BorderBrush="Black" GotFocus="mn_GotFocus" LostFocus="mn_LostFocus"/>
+            <TextBlock Margin="1701,454,0,1590" IsHitTestVisible="False" Text="Middle Name" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Black" FontSize="35" FontFamily="Cambria" FontStyle="Italic" >
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=mn}" Value="">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+
+            <TextBox x:Name="ln" Margin="648,604,0,0" HorizontalContentAlignment="Center" IsEnabled="False" KeyboardNavigation.TabIndex="3" HorizontalAlignment="Left" Height="86" FontFamily="Cambria" FontStyle="Italic" Padding="10" ToolTip="Enter Your Last Name" VerticalAlignment="Top" Width="396" FontSize="35" Foreground="Black" BorderThickness="0,0,0,2" AcceptsReturn="False" AcceptsTab="False" AllowDrop="False" TextWrapping="NoWrap"  Background="{x:Null}" BorderBrush="Black" GotFocus="ln_GotFocus" LostFocus="ln_LostFocus"/>
+            <TextBlock Margin="768,632,0,1412" IsHitTestVisible="False" Text="Last Name" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Black" FontSize="35" FontFamily="Cambria" FontStyle="Italic" >
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=ln}" Value="">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+
+            <TextBox x:Name="newdat" Margin="648,790,0,0" HorizontalContentAlignment="Center" IsEnabled="true" KeyboardNavigation.TabIndex="6" HorizontalAlignment="Left" Height="86" FontFamily="Cambria" FontStyle="Italic" TextWrapping="Wrap" Padding="10" ToolTip="Select Your Date of Birth" VerticalAlignment="Top" Width="396" FontSize="35" Foreground="Black" BorderThickness="0,0,0,2" AcceptsReturn="True" AcceptsTab="True" Background="{x:Null}" BorderBrush="Black" PreviewMouseUp="newdat_PreviewMouseUp" LostFocus="newdat_LostFocus"/>
+            <TextBlock Margin="741,816,0,1230" IsHitTestVisible="False" Text="Date of Birth" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Black" FontSize="35" FontFamily="Cambria" FontStyle="Italic" >
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=newdat}" Value="">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+
+            <TextBox x:Name="ph" Margin="1094,604,0,0" HorizontalContentAlignment="Center" IsEnabled="False" KeyboardNavigation.TabIndex="4" InputScope="TelephoneNumber" HorizontalAlignment="Left" MaxLength="11" Height="86" FontFamily="Cambria" FontStyle="Italic" Padding="10" ToolTip="Enter Your Phone Number" VerticalAlignment="Top" Width="375" FontSize="35" Foreground="Black" BorderThickness="0,0,0,2" AcceptsReturn="True" AcceptsTab="False" AllowDrop="False" TextWrapping="NoWrap" Background="{x:Null}" BorderBrush="Black" PreviewTextInput="ph_PreviewTextInput" LostFocus="ph_LostFocus" GotFocus="ph_GotFocus"/>
+            <TextBlock Margin="1197,631,0,1414" IsHitTestVisible="False" Text="Phone Number" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Black" FontSize="35" FontFamily="Cambria" FontStyle="Italic" >
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=ph}" Value="">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+
+            <TextBox x:Name="em" Margin="1591,604,0,0" HorizontalContentAlignment="Center" IsEnabled="False" KeyboardNavigation.TabIndex="5" HorizontalAlignment="Left" Height="86" FontFamily="Cambria" FontStyle="Italic" Padding="10" ToolTip="Enter Your Email" VerticalAlignment="Top" Width="375" FontSize="35" Foreground="Black" BorderThickness="0,0,0,2" AcceptsReturn="False" AcceptsTab="False" AllowDrop="False" TextWrapping="NoWrap" Background="{x:Null}" BorderBrush="Black" LostFocus="em_LostFocus" GotFocus="em_GotFocus"/>
+            <TextBlock Margin="1729,631,0,1414" IsHitTestVisible="False" Text="Email" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Black" FontSize="35" FontFamily="Cambria" FontStyle="Italic" >
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=em}" Value="">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+
+            <ComboBox Style="{StaticResource titlecombo}" x:Name="gen" IsEnabled="False" MaxDropDownHeight="1500" KeyboardNavigation.TabIndex="7" HorizontalAlignment="Left" Margin="1114,786,0,0" VerticalAlignment="Top" Width="375" Height="90" Padding="10" BorderThickness="2" DropDownClosed="gen_DropDownClosed">
+                <ComboBoxItem Content="Male"/>
+                <ComboBoxItem Content="Female"/>
+            </ComboBox>
+            <TextBlock Margin="1160,815,0,1229" IsHitTestVisible="False" Text="-- Select gender --" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Black" FontSize="35" FontFamily="Cambria" FontStyle="Italic" >
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=gen}" Value="">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+
+            <ComboBox Style="{StaticResource titlecombo}" x:Name="marital" IsEnabled="False" MaxDropDownHeight="1500" KeyboardNavigation.TabIndex="8" HorizontalAlignment="Left" Margin="1591,786,0,0" VerticalAlignment="Top" Width="375" Height="90" Padding="10" BorderThickness="2" DropDownClosed="marital_DropDownClosed">
+                <ComboBoxItem Content="Single"/>
+                <ComboBoxItem Content="Married"/>
+                <ComboBoxItem Content="Divorced"/>
+            </ComboBox>
+            <TextBlock Margin="1629,815,0,1229" IsHitTestVisible="False" Text="-- Marital status --" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Black" FontSize="35" FontFamily="Cambria" FontStyle="Italic" >
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=marital}" Value="">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+
+            <ComboBox Style="{StaticResource titlecombo}" x:Name="ctryRes" IsEnabled="False" MaxDropDownHeight="1500" KeyboardNavigation.TabIndex="9" HorizontalAlignment="Left" Margin="648,1008,0,0" VerticalAlignment="Top" Width="396" Height="90" Padding="10" BorderThickness="2" DropDownClosed="ctryRes_DropDownClosed" />
+
+            <TextBlock Margin="676,1040,0,1004" IsHitTestVisible="False" Text="-- Select nationality --" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Black" FontSize="35" FontFamily="Cambria" FontStyle="Italic" >
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=ctryRes}" Value="">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+
+            <!--<ComboBox Style="{StaticResource titlecombo}" x:Name="state"  MaxDropDownHeight="1500" HorizontalAlignment="Left" Margin="1114,1016,0,0" VerticalAlignment="Top" Width="375" Height="90" Padding="10" BorderThickness="2"/>-->
+
+            <!--<TextBlock Margin="1180,1040,0,1004" IsHitTestVisible="False" Text=" Select state " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Black" FontSize="35" FontFamily="Cambria" FontStyle="Italic" >
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=state}" Value="">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>-->
+
+            <!--<ComboBox Style="{StaticResource titlecombo}" x:Name="cty" HorizontalAlignment="Left"  MaxDropDownHeight="1500" Margin="1591,1016,0,0" VerticalAlignment="Top" Width="375" Height="90" Padding="10" BorderThickness="2"/>-->
+
+            <!--<TextBlock Margin="1660,1040,0,1004" IsHitTestVisible="False" Text=" Select city " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Black" FontSize="35" FontFamily="Cambria" FontStyle="Italic" >
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=cty}" Value="">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>-->
+
+            <!--<ComboBox Style="{StaticResource titlecombo}" x:Name="branch"  MaxDropDownHeight="1500" HorizontalAlignment="Left" Margin="625,1236,0,0" VerticalAlignment="Top" Width="375" Height="90" Padding="10" BorderThickness="2">
+                <ComboBoxItem Content="Nigeria"/>
+                <ComboBoxItem Content="United Kingdom"/>
+                <ComboBoxItem Content="United States of America (U.S.A.)"/>
+                <ComboBoxItem Content="Afghanistan"/>
+            </ComboBox>
+            <TextBlock Margin="652,1260,0,784" IsHitTestVisible="False" Text=" Preferred branch " VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Black" FontSize="35" FontFamily="Cambria" FontStyle="Italic" >
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=branch}" Value="">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>-->
+
+            <!--<DatePicker x:Name="dat" Style="{StaticResource DatePickerStyle1}" CalendarStyle="{StaticResource resizedCalendarItem}" Height="76" Width="550" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="404,882,0,0" Background="#FFFFFFFF" Foreground="#FF898383" BorderBrush="Black" FontSize="35" ToolTip="Select Date" SelectedDateFormat="Long" PreviewMouseLeftButtonUp="dat_PreviewMouseLeftButtonUp"/>-->
+
+            <TextBox x:Name="ra" Margin="1107,1012,0,0" ToolTip="Enter Your Residential Address" IsEnabled="False" KeyboardNavigation.TabIndex="10" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="86" FontFamily="Cambria" FontStyle="Italic" Padding="10" VerticalAlignment="Top" Width="852" FontSize="35" Foreground="Black" BorderThickness="0,0,0,2" AcceptsReturn="False" AcceptsTab="False" AllowDrop="False" TextWrapping="NoWrap"  Background="{x:Null}" BorderBrush="Black" GotFocus="ra_GotFocus" LostFocus="ra_LostFocus"/>
+            <TextBlock Margin="1416,1032,0,1012" IsHitTestVisible="False" Text="Residential Address" VerticalAlignment="Center" HorizontalAlignment="Left" Foreground="Black" FontSize="35" FontFamily="Cambria" FontStyle="Italic" >
+                <TextBlock.Style>
+                    <Style TargetType="{x:Type TextBlock}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding Text, ElementName=ra}" Value="">
+                                <Setter Property="Visibility" Value="Visible"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+            </TextBlock>
+
+            <Button Style="{StaticResource MyButton}" x:Name="cam" HorizontalContentAlignment="Center" IsEnabled="False" KeyboardNavigation.TabIndex="11" HorizontalAlignment="Left" Margin="1062,1164,0,0" VerticalAlignment="Top" Cursor="Hand" FontSize="38" Background="Transparent" UseLayoutRounding="True" Foreground="White" BorderThickness="0" Width="315" BorderBrush="{x:Null}" Height="315" Click="cam_Click">
+                <Border CornerRadius="25,25,25,25"  Width="300" Height="300" BorderThickness="0,0,0,0">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF5A2884" Offset="0"/>
+                            <GradientStop Color="#FF9C2986" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <TextBlock Text="Take Photo" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" Padding="50,180,60,100" FontFamily="Cambria" FontStyle="Italic" Foreground="White" Height="300" VerticalAlignment="Center" Margin="0,0,-42,0" Width="300"/>
+                </Border>
+            </Button>
+
+            <Image x:Name="camIcon" Source="Contents/camera.png" HorizontalAlignment="Left" Height="100" Margin="1160,1252,0,0" VerticalAlignment="Top" Width="100" MouseUp="camIcon_MouseUp"/>
+
+            <Image x:Name="photo" HorizontalAlignment="Left" Height="300" Stretch="Fill" Margin="1051,1494,0,0" VerticalAlignment="Top" Width="350"/>
+
+            <Button Style="{StaticResource MyButton}" x:Name="signature" HorizontalContentAlignment="Center" IsEnabled="False" HorizontalAlignment="Left" Margin="1539,1164,0,0" VerticalAlignment="Top" Cursor="Hand" FontSize="38" Background="Transparent" UseLayoutRounding="True" Foreground="White" BorderThickness="0" Width="315" BorderBrush="{x:Null}" Height="315" Click="signature_Click">
+                <Border CornerRadius="25,25,25,25"  Width="300" Height="300" BorderThickness="0,0,0,0">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF5A2884" Offset="0"/>
+                            <GradientStop Color="#FF9C2986" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <TextBlock Text="Signature" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" Padding="50,180,35,100" FontFamily="Cambria" FontStyle="Italic" Foreground="White" Height="300" VerticalAlignment="Center" Margin="0,0,-42,0" Width="300"/>
+                </Border>
+            </Button>
+
+            <Image x:Name="signIcon" Source="Contents/sign.png" HorizontalAlignment="Left" Height="100" Margin="1659,1242,0,0" VerticalAlignment="Top" Width="100" MouseUp="signIcon_MouseUp"/>
+
+            <Image x:Name="sign" HorizontalAlignment="Left" Stretch="Fill" Height="300" Margin="1532,1494,0,0" VerticalAlignment="Top" Width="350"/>
+
+            <Button Style="{StaticResource MyButton}" x:Name="continueCreate" HorizontalContentAlignment="Center" KeyboardNavigation.TabIndex="13" HorizontalAlignment="Left" Margin="1094,1922,0,0" VerticalAlignment="Top" Cursor="Hand" FontSize="38" Background="Transparent" UseLayoutRounding="True" Foreground="White" BorderThickness="0" Width="365" BorderBrush="{x:Null}" Height="115" Click="continueCreate_Click">
+                <Border CornerRadius="25,25,25,25"  Width="350" Height="100" BorderThickness="0,0,0,0">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF5A2884" Offset="0"/>
+                            <GradientStop Color="#FF9C2986" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <TextBlock Text="Submit" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" Padding="65,25,15,30" FontFamily="Cambria" FontStyle="Italic" Foreground="White" Height="100" VerticalAlignment="Center" Margin="0,0,-42,0" Width="350"/>
+                </Border>
+            </Button>
+
+            <Controls:ProgressRing x:Name="prog" Foreground="Black" Margin="1347,1812,0,194" HorizontalAlignment="Left" VerticalAlignment="Center" Width="80" Height="80" IsActive="False" />
+            <Label x:Name="cont" Content="" Foreground="Black" Padding="0,15,0,0" Margin="1460,1820,0,186" HorizontalAlignment="Left" VerticalAlignment="Center" Width="auto" Height="80" FontSize="36"/>
+
+            <Button Style="{StaticResource MyButton}" x:Name="back" HorizontalContentAlignment="Center" KeyboardNavigation.TabIndex="14" HorizontalAlignment="Left" Margin="1600,1922,0,0" VerticalAlignment="Top" Cursor="Hand" FontSize="38" Background="Transparent" UseLayoutRounding="True" Foreground="White" BorderThickness="0" Width="365" BorderBrush="{x:Null}" Height="115" Click="back_Click">
+                <Border CornerRadius="25,25,25,25"  Width="350" Height="100" BorderThickness="0,0,0,0">
+                    <Border.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF5A2884" Offset="0"/>
+                            <GradientStop Color="#FF9C2986" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                    <TextBlock Text="Cancel" HorizontalAlignment="Left" TextWrapping="Wrap" TextAlignment="Center" Padding="65,25,15,30" FontFamily="Cambria" FontStyle="Italic" Foreground="White" Height="100" VerticalAlignment="Center" Margin="0,0,-42,0" Width="350"/>
+                </Border>
+            </Button>
+            <Image x:Name="titImg" Source="Contents/tickOK.png" Visibility="Collapsed" HorizontalAlignment="Left" Height="32" Margin="651,456,0,0" VerticalAlignment="Top" Width="30"/>
+            <Image x:Name="fnImg" Source="Contents/tickOK.png" Visibility="Collapsed" HorizontalAlignment="Left" Height="32" Margin="1116,456,0,0" VerticalAlignment="Top" Width="30"/>
+            <Image x:Name="mnImg" Source="Contents/tickOK.png" Visibility="Collapsed" HorizontalAlignment="Left" Height="32" Margin="1595,456,0,0" VerticalAlignment="Top" Width="30"/>
+            <Image x:Name="lnImg" Source="Contents/tickOK.png" Visibility="Collapsed" HorizontalAlignment="Left" Height="32" Margin="651,632,0,0" VerticalAlignment="Top" Width="30"/>
+            <Image x:Name="phImg" Source="Contents/tickOK.png" Visibility="Collapsed" HorizontalAlignment="Left" Height="32" Margin="1116,632,0,0" VerticalAlignment="Top" Width="30"/>
+            <Image x:Name="emImg" Source="Contents/tickOK.png" Visibility="Collapsed" HorizontalAlignment="Left" Height="32" Margin="1595,634,0,0" VerticalAlignment="Top" Width="30"/>
+            <Image x:Name="dobImg" Source="Contents/tickOK.png" Visibility="Collapsed" HorizontalAlignment="Left" Height="32" Margin="651,824,0,0" VerticalAlignment="Top" Width="30"/>
+            <Image x:Name="gImg" Source="Contents/tickOK.png" Visibility="Collapsed" HorizontalAlignment="Left" Height="32" Margin="1116,824,0,0" VerticalAlignment="Top" Width="30"/>
+            <Image x:Name="mImg" Source="Contents/tickOK.png" Visibility="Collapsed" HorizontalAlignment="Left" Height="32" Margin="1591,824,0,0" VerticalAlignment="Top" Width="30"/>
+            <Image x:Name="natImg" Source="Contents/tickOK.png" Visibility="Collapsed" HorizontalAlignment="Left" Height="32" Margin="651,1050,0,0" VerticalAlignment="Top" Width="30"/>
+            <Image x:Name="raImg" Source="Contents/tickOK.png" Visibility="Collapsed" HorizontalAlignment="Left" Height="32" Margin="1116,1050,0,0" VerticalAlignment="Top" Width="30"/>
+
+
+
+        </Grid>
+    </Viewbox>
+
+</Page>

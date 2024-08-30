@@ -1,0 +1,47 @@
+﻿<Window x:Class="fcmb.unavailable"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Unavailable" Height="350" Width="550" AllowsTransparency="True" WindowStartupLocation="CenterScreen" WindowStyle="None" ShowInTaskbar="False" ResizeMode="NoResize" Topmost="True" Loaded="Window_Loaded">
+    <Window.Background>
+        <SolidColorBrush Color="Transparent"/>
+    </Window.Background>
+    <Viewbox>
+        <Grid Width="650" Height="350" Background="Transparent">
+            <Border CornerRadius="25,25,0,0"  Height="110" Margin="0,0,0,237">
+                <Label VerticalAlignment="Center" Foreground="White" Content="Information" FontFamily="acumin-pro,sans-serif" FontWeight="Bold" FontStyle="Italic" FontSize="40" Margin="168,31,139,21" />
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#5c2684" Offset="0"/>
+                        <GradientStop Color="#FFAD2585" Offset="1"/>
+                    </LinearGradientBrush>
+                </Border.Background>
+            </Border>
+
+            <Image Source="Contents/logo.png" OpacityMask="Gray" Margin="0,7,521,243"  RenderTransformOrigin="-6.3,0.432"/>
+
+            <Image Source="Contents/drag.fw.png" OpacityMask="Gray" Margin="535,30,19,260" MouseDown="Window_MouseDown"/>
+            <TextBox Foreground="White" BorderThickness="0" Background="Transparent" Padding="3" HorizontalContentAlignment="Right" Text="Drag box here" TextWrapping="WrapWithOverflow" FontFamily="Cambria" FontWeight="Bold" FontStyle="Italic" FontSize="15" Margin="503,16,91,255" IsReadOnly="True" MouseDown="Window_MouseDown" />
+            <Border CornerRadius="0,0,25,25" Margin="0,112,0,0">
+                <Border.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFAD2585" Offset="0"/>
+                        <GradientStop Color="#ffb717" Offset="1"/>
+                    </LinearGradientBrush>
+                    <!-- <SolidColorBrush  Opacity="0.9"/>-->
+                </Border.Background>
+            </Border>
+            <RichTextBox x:Name="res" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="126" Margin="54,116,0,0" VerticalAlignment="Top" Width="546" Foreground="Black" FontSize="25" FontFamily="acumin-pro,sans-serif" FontStyle="Italic" Background="{x:Null}" BorderBrush="{x:Null}" BorderThickness="0" IsReadOnly="True">
+                <FlowDocument>
+                    <Paragraph TextAlignment="Center">
+                        <Run Text=""/>
+                    </Paragraph>
+                </FlowDocument>
+            </RichTextBox>
+            <Button Style="{StaticResource MyButton}" x:Name="dismiss" HorizontalAlignment="Left" Margin="237,272,0,0" VerticalAlignment="Top" Cursor="Hand" FontSize="18" Background="Transparent" UseLayoutRounding="True" Foreground="White" BorderThickness="0" Width="187" BorderBrush="{x:Null}" Height="68" Click="dismiss_Click">
+                <Border CornerRadius="10,10,10,10"  Width="170" Height="55" BorderThickness="0,0,0,0" Background="#5c2684">
+                    <TextBlock Text="Close" TextWrapping="Wrap" TextAlignment="Center" Padding="10" FontWeight="Bold" FontFamily="acumin-pro,sans-serif" Foreground="White" Height="45" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="10,6,10,4" Width="150" />
+                </Border>
+            </Button>
+        </Grid>
+    </Viewbox>
+</Window>
